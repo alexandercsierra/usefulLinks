@@ -38,7 +38,9 @@ const WeekContainer = styled.div`
     margin: 4%;
     box-shadow: 0.3em 0.3em 1em rgba(30,30,30,0.3);
     padding: 6%;
-    width: 50%;
+    // width: 50%;
+    width: 600px;
+    height: 600px;
 `;
 
 const H2 = styled.h2`
@@ -63,13 +65,24 @@ const Li = styled.li`
 `;
 
 const Unit = (props) => {
-    const [isFlipped, setIsFlipped] = useState(false);
+    const [isFlipped, setIsFlipped] = useState({
+        "card1": false,
+        "card2": false,
+        "card3": false
+    });
+
     // const {unit} = props;
     const unit = links[props.unit]
     const title = unit.title;
-    const handleClick = (e) => {
+    const handleClick = (id, e) => {
         e.preventDefault();
-        setIsFlipped(!isFlipped);
+        console.log("e.taget.id", e.target.id);
+        console.log("week.id", id);
+        if (id=== Number(e.target.id)){
+            console.log("inside the if");
+            setIsFlipped(!isFlipped);
+        }
+        
       }
 
       //need to only flip the card that is clicked, not all of them.....
@@ -78,8 +91,12 @@ const Unit = (props) => {
 <Banner><Title>{title}</Title></Banner>
         <Container>
             {unit.weeks.map(week => {
-                return <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-                    <WeekContainer onClick={handleClick}>
+                console.log("weekid", week.id.toString());
+                let cardNum = "card" + week.id.toString();
+                console.log(isFlipped["card" + week.id.toString()]);
+                console.log("cardNum", isFlipped[cardNum])
+                return <ReactCardFlip isFlipped={isFlipped.cardNum} flipDirection="vertical">
+                    <WeekContainer onClick={e => handleClick(week.id, e)} id={week.id}>
             <H2>{week.title}</H2>
             {week.days.map(day => {
                 return (<div>

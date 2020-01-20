@@ -3,6 +3,7 @@ const links = {
     title: "Web Fundamentals",
     weeks: [
       {
+        id: 1,
         title: "User Interface and Git",
         days: [
           {
@@ -36,6 +37,7 @@ const links = {
         ]
       },
       {
+        id: 2,
         title: "Advanced CSS",
         days: [
           {
@@ -69,6 +71,7 @@ const links = {
         ]
       },
       {
+        id: 3,
         title: "JavaScript Fundamentals",
         days: [
           {
@@ -107,6 +110,7 @@ const links = {
     title: "Web Applications I",
     weeks: [
       {
+        id: 1,
         title: "Applied JavaScript",
         days: [
           {
@@ -140,6 +144,7 @@ const links = {
         ]
       },
       {
+        id: 2,
         title: "Intro to React",
         days: [
           {
@@ -173,6 +178,7 @@ const links = {
         ]
       },
       {
+        id: 3,
         title: "Single Page Applications",
         days: [
           {
@@ -211,6 +217,7 @@ const links = {
     title: "Web Applications II",
     weeks: [
       {
+        id: 1,
         title: "Advanced React",
         days: [
           {
@@ -244,6 +251,7 @@ const links = {
         ]
       },
       {
+        id: 2,
         title: "Advanced State Management",
         days: [
           {
@@ -277,6 +285,7 @@ const links = {
         ]
       },
       {
+        id: 3,
         title: "Advanced Web Applications",
         days: [
           {
